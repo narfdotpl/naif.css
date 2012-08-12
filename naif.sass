@@ -1,0 +1,212 @@
+//-------------
+//  variables
+//-------------
+
+// font size
+$font-size:    20px
+$line-height:  28px / $font-size * 1em
+
+// content width
+$normal-width: 640px
+$narrow-coeff: 0.8
+$narrow-width: $narrow-coeff * $normal-width
+
+// indentation
+$margin: 1.3 * $line-height
+
+// responsiveness
+$portrait-width:   320px
+$landscape-width:  480px
+
+// solarized colors
+$base03:  #002b36
+$base1:   #93a1a1
+$base2:   #eee8d5
+$base3:   #fdf6e3
+$red:     #dc322f
+
+
+//--------------
+//  main style
+//--------------
+
+body
+    // use readable font
+    font-family: Georgia, 'Times New Roman', serif
+    font-size: $font-size
+    line-height: $line-height
+
+    // make font smaller on phones
+    @media (max-width: $landscape-width)
+        font-size: 0.9 * $font-size
+
+    background: $base3
+    color: $base03
+
+// keep the links simple
+a
+    color: $red
+    text-decoration: none
+    &:hover
+        text-decoration: underline
+
+// get rid of margins
+blockquote, code, h1, h2, h3, h4, h5, h6, ol, p, pre, ul
+    margin: 0
+
+// make headings look like normal text
+h1, h2, h3, h4, h5, h6
+    line-height: $line-height
+    font:
+        weight: normal
+        style: normal
+        size: 1em
+
+// style main title
+h1
+    $x: 25px
+    font-size: $x / $font-size * 1em
+    font-weight: bold
+    line-height: $line-height * $font-size / $x
+    padding:
+        top: 36px / $x * 1em
+        bottom: 20px / $x * 1em
+
+// style section titles
+h2
+    font-weight: bold
+    margin-top: $line-height
+    padding:
+        top: 18px / $font-size * 1em
+        bottom: 10px / $font-size * 1em
+
+// add vertical margins to remaining headings
+h3, h4, h5, h6
+    margin:
+        top: 2 * $line-height
+        bottom: $line-height
+
+// leave blank line after block elements
+header, ol, p, pre, ul
+    margin-bottom: $line-height
+
+// ...but not in nested lists
+li
+    ul, ol
+        margin-bottom: 0
+
+// justify text in paragraphs if content is wide enough
+p
+    text-align: justify
+    @media (max-width: $narrow-width)
+        text-align: left
+
+// style quotes
+blockquote
+    margin-right: $margin
+    padding-left: $margin - 5px / $font-size * 1em
+    border-left: 5px / $font-size * 1em solid $base2
+
+    &.spline
+        margin:
+            top: -0.5 * $line-height
+            bottom: -0.5 * $line-height
+
+// add horizontal margins to code samples
+pre
+    padding:
+        left: $margin
+        right: $margin
+
+// indent lists
+ol, ul
+    padding-left: 3ex
+
+// ...and keep them simple
+ul
+    list-style-type: disc
+
+// style horizontal line
+hr
+    margin: 0
+    margin-top: $line-height
+    padding-bottom: $line-height
+    border: 0
+    border-top: 1px solid $base1
+
+// make address straight
+address
+    font-style: normal
+
+// control the content width
+#main-wrapper
+    max-width: $normal-width
+
+    &.narrow
+        max-width: $narrow-width
+
+    padding: 0 12px
+
+    margin:
+        top: $line-height
+        bottom: 2 * $line-height
+        left: auto
+        right: auto
+
+    // remove vertical margins on phones
+    @media (max-width: $landscape-width)
+        margin:
+            top: 0
+            bottom: 0
+
+    & .narrow
+        width: 80%
+
+        // in portrait mode, make the narrow layout less narrow
+        @media (max-width: $portrait-width)
+            width: 90%
+
+        margin:
+            left: auto
+            right: auto
+
+
+//----------
+//  hidden
+//----------
+
+.hidden-portrait
+    @media (max-width: $portrait-width)
+        display: none
+
+.hidden-landscape
+    @media (min-width: $portrait-width + 1px) and (max-width: $landscape-width)
+        display: none
+
+.hidden-elsewhere
+    @media (min-width: $landscape-width + 1px)
+        display: none
+
+
+//------------------
+//  helper classes
+//------------------
+
+.centered
+    text-align: center
+
+.hidden
+    display: none
+
+.inlined
+    display: inline
+
+
+//----------
+//  rhythm
+//----------
+
+.rhythm
+    @each $prefix in "", "-o-", "-moz-", "-webkit-", "-ms-"
+        #{$prefix}background-size: $line-height
+        background-image: #{$prefix}gradient(linear, 0 0, 0 100%, color-stop(.80, $base3), color-stop(.80, transparent), color-stop(0.84, $base3))

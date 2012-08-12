@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+task :build do
+  system "cp submodules/normalize.css/normalize.css tmp && " \
+         "sass naif.sass >> tmp && " \
+         "cat tmp | cssmin | sed 's/\\/\\*.*\\*\\/ //' > naif.min.css && " \
+         "rm tmp"
+end
+
+
+task :show do
+  system "open index.html"
+end

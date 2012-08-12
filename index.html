@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>naif.css</title>
+        <link href="naif.min.css" rel="stylesheet">
+        <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1">
+    </head>
+    <body>
+        <article id="main-wrapper">
+
+            <header class="centered">
+                <h1>naif.css</h1>
+
+                <address class="inlined">
+                    <a href="http://narf.pl/">@narfdotpl</a>
+                </address>
+
+                &middot;
+
+                <time pubdate datetime="2012-06-04" title="2012-06-04" class="js-date">2012-06-04</time>
+            </header>
+
+            <br>
+
+            <p class="narrow centered">
+                <i>produced in a straightforward style that deliberately rejects sophisticated artistic
+                techniques and has a bold directness resembling a child's work</i>
+            </p>
+
+
+            <h2>Project</h2>
+
+            <p>naif.css is a minimalistic stylesheet.  This project uses <a href="http://necolas.github.com/normalize.css/">normalize.css</a>
+            and is released into public domain.  The <a href="https://github.com/narfdotpl/naif.css">source</a> is on GitHub.</p>
+
+
+            <h2>Features</h2>
+
+            <ul>
+                <li>readability</li>
+                <li>responsiveness</li>
+                <li>baseline <a href="#" class="js-rhythm">rhythm</a></li>
+                <li><a href="http://ethanschoonover.com/solarized">solarized</a> colors</li>
+            </ul>
+
+
+            <h2>Examples</h2>
+
+            <p>This section showcases the few styles defined in naif.css.
+            Inspect Element and View Source are your friends.</p>
+
+
+            <h3>Headings</h3>
+
+            <p>You've already seen h1-h3.  h4-h6 look the same as h3.
+            "Flat is better than nested".</p>
+
+
+            <h3>Unordered lists</h3>
+
+            <ul>
+                <li>
+                    nothing
+                    <ul>
+                        <li>
+                            too
+                            <ul>
+                                <li>fancy</li>
+                            </ul>
+                        </li>
+                        <li>here</li>
+                    </ul>
+                </li>
+                <li>really</li>
+            </ul>
+
+
+            <h3>Ordered lists</h3>
+
+            <ol>
+                <li>
+                    seriously
+                    <ol>
+                        <li>
+                            no
+                            <ol>
+                                <li>extra</li>
+                            </ol>
+                        </li>
+                        <li>vertical</li>
+                    </ol>
+                </li>
+                <li>margins</li>
+            </ol>
+
+
+            <h3>Quotes</h3>
+
+            <p>It is presumed that a quote contains at least one paragraph.
+            There are two types of quotes in naif.css.</p>
+
+            <blockquote><p>The first one is normal.</p></blockquote>
+
+            <p>The other one is called a "spline".</p>
+
+            <blockquote class="spline"><p>It has smaller top and bottom margins.</p></blockquote>
+
+            <p>It requires usage of a <code>spline</code> class.</p>
+
+
+            <h3>Inline code</h3>
+
+            <p>When in doubt, <code>use(brute_force)</code>.</p>
+
+
+            <h3>Blocks of code</h3>
+
+            <pre><code>(define (compose f g)
+  (lambda (x) (f (g x))))</code></pre>
+
+
+            <h3>Helper classes</h3>
+
+            <p>There are a few hopefully-self-explanatory helper classes:</p>
+
+            <ul>
+                <li><code>centered</code></li>
+                <li><code>hidden</code></li>
+                <li><code>inlined</code></li>
+            </ul>
+
+
+            <h3>Responsiveness</h3>
+
+            <p>naif.css works on desktops, tablets and phones.  To take advantage of it on
+            mobile devices, you should use the following meta tag: </p>
+
+            <pre><code>&lt;meta name="viewport"
+      content="width=device-width,
+               initial-scale=1"&gt;</code></pre>
+
+            <p>Because of a quite narrow maximal width of the content block (640&nbsp;px),
+            the "traditional" phone vs tablet vs desktop distinction is replaced with a different division:</p>
+
+            <ul>
+                <li>portrait phone (maximal width of 320&nbsp;px)</li>
+                <li>landscape phone (maximal width of 480&nbsp;px)</li>
+                <li>tablet or desktop</li>
+            </ul>
+
+            <p>On phones, the font is 10% smaller and text in paragraphs is not justified.</p>
+
+            <p>You can make certain elements hidden on given devices by using following classes:</p>
+
+            <ul>
+                <li><code>hidden-portrait</code></li>
+                <li><code>hidden-landscape</code></li>
+                <li><code>hidden-elsewhere</code></li>
+            </ul>
+
+
+            <h3>Narrow layout</h3>
+
+            <div class="narrow">
+                <p>Narrow layout, associated with the <code>narrow</code> class, uses 80% of the width (90% on portrait phones).
+                It can be used both inside the main wrapper and directly on it:</p>
+
+                <pre><code>&lt;article id="main-wrapper"
+         class="narrow"&gt;</code></pre>
+            </div>
+
+
+            <h3>Horizontal line</h3>
+
+            <hr>
+
+
+            <script src="submodules/daysago.js/daysago.min.js"></script>
+            <script>
+                daysAgo.activateForClass('js-date')
+            </script>
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+            <script>
+                $('.js-rhythm').click(function (ev) {
+                    $('#main-wrapper').toggleClass('rhythm')
+                    ev.preventDefault()
+                })
+            </script>
+
+        </article>
+    </body>
+</html>

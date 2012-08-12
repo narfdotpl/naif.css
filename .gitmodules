@@ -1,0 +1,6 @@
+[submodule "submodules/normalize.css"]
+	path = submodules/normalize.css
+	url = https://github.com/necolas/normalize.css.git
+[submodule "submodules/daysago.js"]
+	path = submodules/daysago.js
+	url = https://github.com/narfdotpl/daysago.js.git

@@ -207,6 +207,6 @@ address
 //----------
 
 .rhythm
-    @each $prefix in "", "-o-", "-moz-", "-webkit-", "-ms-"
-        #{$prefix}background-size: $line-height
-        background-image: #{$prefix}gradient(linear, 0 0, 0 100%, color-stop(.80, $base3), color-stop(.80, transparent), color-stop(0.84, $base3))
+    background: url('img/rhythm-normal.png')
+    @media (max-width: $landscape-width)
+        background: url('img/rhythm-small.png')

@@ -112,11 +112,17 @@ blockquote
             top: -0.5 * $line-height
             bottom: -0.5 * $line-height
 
-// add horizontal margins to code samples
 pre
+    // add horizontal margins to code blocks
     padding:
         left: $margin
         right: $margin
+
+    // use horizontal scroll if code is too wide
+    overflow-x: auto
+    code
+        white-space: pre
+        word-wrap: normal
 
 // indent lists
 ol, ul

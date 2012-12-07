@@ -174,21 +174,31 @@
             <h3>Horizontal line</h3>
 
             <hr>
-
-
-            <script src="submodules/daysago.js/daysago.min.js"></script>
-            <script>
-                daysAgo.activateForClass('js-date')
-            </script>
-
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-            <script>
-                $('.js-rhythm').click(function (ev) {
-                    $('#main-wrapper').toggleClass('rhythm')
-                    ev.preventDefault()
-                })
-            </script>
-
         </article>
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-8752416-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+        <script src="submodules/daysago.js/daysago.min.js"></script>
+        <script>
+            daysAgo.activateForClass('js-date')
+        </script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script>
+            $('.js-rhythm').click(function (ev) {
+                $('#main-wrapper').toggleClass('rhythm')
+                ev.preventDefault()
+            })
+        </script>
     </body>
 </html>

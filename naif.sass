@@ -54,8 +54,9 @@ a
 blockquote, code, h1, h2, h3, h4, h5, h6, ol, p, pre, ul
     margin: 0
 
-// make headings look like normal text
+// make headings look like normal text with improved legibility
 h1, h2, h3, h4, h5, h6
+    text-rendering: optimizeLegibility
     line-height: $line-height
     font:
         weight: normal
@@ -212,6 +213,9 @@ address
 
 .inlined
     display: inline
+
+.legible
+    text-rendering: optimizeLegibility
 
 
 //----------

@@ -3,8 +3,8 @@
 //-------------
 
 // font size
-$font-size:    20px
-$line-height:  28px / $font-size * 1em
+$font-size:    21px
+$line-height:  30px / $font-size * 1em
 
 // content width
 $normal-width: 640px
@@ -35,6 +35,7 @@ body
     font-family: 'Iowan Old Style', Georgia, serif
     font-size: $font-size
     line-height: $line-height
+    font-variant-numeric: oldstyle-nums
 
     // make font smaller on phones
     @media (max-width: $landscape-width)
@@ -65,21 +66,20 @@ h1, h2, h3, h4, h5, h6
 
 // style main title
 h1
-    $x: 25px
+    $x: 28px
     font-size: $x / $font-size * 1em
     font-weight: bold
-    line-height: $line-height * $font-size / $x
     padding:
-        top: 36px / $x * 1em
-        bottom: 20px / $x * 1em
+        top: 40px / $x * 1em
+        bottom: 10px / $x * 1em
 
 // style section titles
 h2
     font-weight: bold
     margin-top: $line-height
     padding:
-        top: 18px / $font-size * 1em
-        bottom: 10px / $font-size * 1em
+        top: 0.64 * $line-height
+        bottom: 0.36 * $line-height
 
 // add vertical margins to remaining headings
 h3, h4, h5, h6
@@ -110,6 +110,7 @@ blockquote
 // use sane font for code
 code
     font-family: Menlo, monospace
+    font-size: 0.85 * $font-size
 
 pre
     // add horizontal margins to code blocks

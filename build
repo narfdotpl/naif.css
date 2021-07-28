@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 
+# npm install -g sass
+# npm install -g cssmin
+
 cp submodules/normalize.css/normalize.css tmp
 sass naif.sass >> tmp &&
-cat tmp | cssmin | sed 's/\/\*.*\*\/ //' > naif.min.css
+cat tmp | cssmin > naif.min.css
 rm tmp
